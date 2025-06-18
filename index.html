@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge/Structure Survey Form</title>
+  <style>
+   body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+   }
+   .form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   }
+   .form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2c3e50;
+   }
+   .form-header h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+   }
+   .form-header h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+   }
+   .form-group {
+    margin-bottom: 20px;
+   }
+   label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+   }
+   input[type="text"],
+   input[type="number"],
+   select,
+   textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+   }
+   input[type="text"]:focus,
+   input[type="number"]:focus,
+   select:focus,
+   textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+   }
+   textarea {
+    resize: vertical;
+    min-height: 60px;
+   }
+   .radio-group {
+    margin-top: 5px;
+   }
+   .radio-group label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+   }
+   .radio-group input[type="radio"] {
+    margin-right: 5px;
+   }
+   .checkbox-group {
+    margin-top: 5px;
+   }
+   .checkbox-group label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+   }
+   .checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+   }
+   .submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+   }
+   .submit-btn:hover {
+    background-color: #2980b9;
+   }
+   .required {
+    color: #e74c3c;
+   }
+   .span-config-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+   }
+   .span-config-row label {
+    margin-bottom: 0;
+    min-width: 120px;
+   }
+   .span-config-row input {
+    flex: 1;
+    max-width: 150px;
+   }
+   .span-config-row .row-number {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+   }
+  </style>
+ </head>
+ <body>
+  <div class="form-container">
+   <div class="form-header">
+    <h1>PROFORMA FOR BRIDGE/STRUCTURE SURVEY AND INSPECTION</h1>
+    <h2>A. Details of existing Bridge/Structure</h2>
+   </div>
+
+   <form>
+    <div class="form-group">
+     <label for="riverName"
+      >1. Name of River: <span class="required">*</span></label
+     >
+     <input type="text" id="riverName" name="riverName" required />
+    </div>
+
+    <div class="form-group">
+     <label for="roadName"
+      >2. Name of Road: <span class="required">*</span></label
+     >
+     <input type="text" id="roadName" name="roadName" required />
+    </div>
+
+    <div class="form-group">
+     <label for="chainage"
+      >3. Chainage of the Bridge/Structure:
+      <span class="required">*</span></label
+     >
+     <input type="text" id="chainage" name="chainage" required />
+    </div>
+
+    <div class="form-group">
+     <label for="circleName"
+      >4a. Name of Circle: <span class="required">*</span></label
+     >
+     <input type="text" id="circleName" name="circleName" required />
+    </div>
+
+    <div class="form-group">
+     <label for="divisionName"
+      >4b. Name of Division: <span class="required">*</span></label
+     >
+     <input type="text" id="divisionName" name="divisionName" required />
+    </div>
+
+    <div class="form-group">
+     <label for="subdivisionName"
+      >4c. Name of Subdivision: <span class="required">*</span></label
+     >
+     <input type="text" id="subdivisionName" name="subdivisionName" required />
+    </div>
+
+    <div class="form-group">
+     <label for="spanCount"
+      >5. No. of Span: <span class="required">*</span></label
+     >
+     <select id="spanCount" name="spanCount" required>
+      <option value="">Select number of spans</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+     </select>
+    </div>
+
+    <div class="form-group" id="spanConfigurationSection" style="display: none">
+     <h3
+      style="
+       color: #2c3e50;
+       margin-bottom: 15px;
+       border-bottom: 2px solid #3498db;
+       padding-bottom: 5px;
+      ">
+      5a. Various Configuration of Span (Span Length & Arrangement)
+     </h3>
+     <div id="spanConfigurationRows"></div>
+    </div>
+
+    <div class="form-group" id="totalLengthSection" style="display: none">
+     <label for="totalLength"
+      >5b. Total Length of Bridge(Excluding Approach):
+      <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="totalLength"
+      name="totalLength"
+      step="0.01"
+      placeholder="in meters"
+      required />
+    </div>
+    <div class="form-group">
+     <label for="angleCrossing"
+      >6. Angle of crossing WRT(with respect to flow) :
+      <span class="required">*</span></label
+     >
+     <input
+      type="text"
+      id="angleCrossing"
+      name="angleCrossing"
+      placeholder="Enter angle of crossing with respect to flow"
+      required />
+    </div>
+
+    <div class="form-group">
+     <label for="bridgeType"
+      >7. Type of Bridge/Structure: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="bridgeType" value="simple_supported" /> Simple
+       Supported Span</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="continuous" />
+       Continuous</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="balanced" />
+       Balanced</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="cantilever" />
+       Cantilever</label
+      >
+      <label><input type="radio" name="bridgeType" value="arch" /> Arch</label>
+      <label
+       ><input type="radio" name="bridgeType" value="integrated" />
+       Integrated</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="cable_stayed" /> Cable
+       Stayed</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="suspension" />
+       Suspension</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="culvert" /> Culvert</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="sub_drain" /> Sub
+       Drain</label
+      >
+      <label
+       ><input type="radio" name="bridgeType" value="other" /> Any Other
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="bridgeTypeOther"
+      name="bridgeTypeOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="superStructure"
+      >8a. Type of Super-Structure: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="superStructure" value="solid_slab" /> Solid
+       Slab, PSC Solid Slab</label
+      >
+      <label
+       ><input type="radio" name="superStructure" value="psc_solid_slab" /> PSC
+       Solid Slab</label
+      >
+      <label
+       ><input type="radio" name="superStructure" value="rcc_t_beam" /> RCC
+       T-Beam Deck Slab</label
+      >
+      <label
+       ><input type="radio" name="superStructure" value="psc_girder_box" /> PSC
+       Girder, PSC Box, RCC Box</label
+      >
+      <label
+       ><input type="radio" name="superStructure" value="steel_girder" /> Steel
+       Girder</label
+      >
+      <label
+       ><input type="radio" name="superStructure" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="superStructureOther"
+      name="superStructureOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="weavingCoat"
+      >8b. Type of Weaving Coat: <span class="required">*</span></label
+     >
+     <input
+      type="text"
+      id="weavingCoat"
+      name="weavingCoat"
+      placeholder="Enter type of weaving coat"
+      required />
+    </div>
+
+    <div class="form-group">
+     <label for="subStructure"
+      >9a. Type of Sub-Structure: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="subStructure" value="pcc_piers" /> PCC
+       Piers</label
+      >
+      <label
+       ><input type="radio" name="subStructure" value="rcc_wall_piers" /> RCC
+       Wall Piers</label
+      >
+      <label
+       ><input type="radio" name="subStructure" value="portal_frame" /> Portal
+       Frame</label
+      >
+      <label
+       ><input type="radio" name="subStructure" value="circular_piers" />
+       Circular Piers</label
+      >
+      <label
+       ><input type="radio" name="subStructure" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="subStructureOther"
+      name="subStructureOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="abutmentType"
+      >9b. Type of Abutment: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="abutmentType" value="box_type" /> Box
+       Type</label
+      >
+      <label
+       ><input type="radio" name="abutmentType" value="cantilever" />
+       Cantilever</label
+      >
+      <label
+       ><input type="radio" name="abutmentType" value="counterport" />
+       Counterport</label
+      >
+      <label
+       ><input type="radio" name="abutmentType" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="abutmentTypeOther"
+      name="abutmentTypeOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="returnDetails"
+      >9c. Details of Return & its Length:
+      <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="returnDetails" value="butterfly" />
+       Butterfly</label
+      >
+      <label
+       ><input type="radio" name="returnDetails" value="square_box" /> Square
+       Box</label
+      >
+      <label
+       ><input type="radio" name="returnDetails" value="wing_type" /> Wing
+       Type</label
+      >
+      <label
+       ><input type="radio" name="returnDetails" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="returnDetailsOther"
+      name="returnDetailsOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="foundation"
+      >10. Type of Foundation: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="foundation" value="well_foundation" /> Well
+       Foundation</label
+      >
+      <label
+       ><input type="radio" name="foundation" value="pile_foundation" /> Pile
+       Foundation</label
+      >
+      <label
+       ><input type="radio" name="foundation" value="open_foundation" /> Open
+       Foundation</label
+      >
+      <label
+       ><input type="radio" name="foundation" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="foundationOther"
+      name="foundationOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="bearing"
+      >11. Type of Bearing: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="bearing" value="tar_paper" /> Tar Paper</label
+      >
+      <label><input type="radio" name="bearing" value="pot" /> Pot</label>
+      <label
+       ><input type="radio" name="bearing" value="metallic" /> Metallic</label
+      >
+      <label
+       ><input type="radio" name="bearing" value="rocker_roller" /> Rocker
+       Roller</label
+      >
+      <label
+       ><input type="radio" name="bearing" value="spherical" /> Spherical</label
+      >
+      <label
+       ><input type="radio" name="bearing" value="elastomer" /> Elastomer</label
+      >
+      <label
+       ><input type="radio" name="bearing" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="bearingOther"
+      name="bearingOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="approachType"
+      >12a. Type of Approach: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="approachType" value="retaining_wall" />
+       Retaining Wall</label
+      >
+      <label
+       ><input type="radio" name="approachType" value="re_wall" /> RE
+       Wall</label
+      >
+      <label
+       ><input type="radio" name="approachType" value="both" /> Both</label
+      >
+      <label
+       ><input type="radio" name="approachType" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="approachTypeOther"
+      name="approachTypeOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <div style="display: flex; align-items: center; gap: 20px">
+      <label for="approachLength" style="min-width: 200px"
+       >12b. Total Length of Approach: <span class="required">*</span></label
+      >
+      <div style="display: flex; gap: 15px; align-items: center">
+       <div>
+        <label
+         for="approachLHS"
+         style="font-size: 12px; color: #666; margin-right: 5px"
+         >a. LHS:</label
+        >
+        <input
+         type="number"
+         id="approachLHS"
+         name="approachLHS"
+         step="0.01"
+         placeholder="0.00"
+         min="0"
+         style="width: 80px" />
+       </div>
+       <div>
+        <label
+         for="approachRHS"
+         style="font-size: 12px; color: #666; margin-right: 5px"
+         >b. RHS:</label
+        >
+        <input
+         type="number"
+         id="approachRHS"
+         name="approachRHS"
+         step="0.01"
+         placeholder="0.00"
+         min="0"
+         style="width: 80px" />
+       </div>
+       =
+       <div>
+        <label
+         for="approachLength"
+         style="font-size: 12px; color: #666; margin-right: 5px"
+         >Total:</label
+        >
+        <input
+         type="text"
+         id="approachLength"
+         name="approachLength"
+         placeholder="0.00"
+         readonly
+         style="background-color: #f8f9fa; width: 100px" />
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="form-group">
+     <label for="railing"
+      >13. Type of Railing: <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="railing" value="rcc_parapet" /> RCC
+       Parapet</label
+      >
+      <label
+       ><input type="radio" name="railing" value="pipe_railing" /> Pipe
+       Railing</label
+      >
+      <label
+       ><input type="radio" name="railing" value="crash_barrier" /> Crash
+       Barrier(RCC)</label
+      >
+      <label
+       ><input type="radio" name="railing" value="crash_barrier" /> Crash
+       Barrier(Metal Beam)</label
+      >
+      <label
+       ><input type="radio" name="railing" value="other" /> Any Other
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="railingOther"
+      name="railingOther"
+      placeholder="If other, please specify details"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="riverTraining"
+      >14. Detail of River Training Work/Floor Protection Work if any:</label
+     >
+     <textarea
+      id="riverTraining"
+      name="riverTraining"
+      placeholder="Enter details of river training work or floor protection work"></textarea>
+    </div>
+
+    <div class="form-group">
+     <label for="repairWork"
+      >15. Repair/Strengthening Work Detail if any:</label
+     >
+     <textarea
+      id="repairWork"
+      name="repairWork"
+      placeholder="Enter details of repair or strengthening work"></textarea>
+    </div>
+
+    <div class="form-group">
+     <label for="carriagewayWidth"
+      >16a. Clear Carriageway Width (mtr.):
+      <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="carriagewayWidth"
+      name="carriagewayWidth"
+      step="0.01"
+      placeholder="in meters"
+      required />
+    </div>
+
+    <div class="form-group">
+     <label for="totalCarriageway"
+      >16b. O/O Total Carriage Way (mtr.):
+      <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="totalCarriageway"
+      name="totalCarriageway"
+      step="0.01"
+      placeholder="in meters"
+      required />
+    </div>
+
+    <div class="form-group">
+     <label for="constructionYear"
+      >17. Year of Construction: <span class="required">*</span></label
+     >
+     <select id="constructionYear" name="constructionYear" required>
+      <option value="">Select year</option>
+     </select>
+    </div>
+
+    <div class="form-group">
+     <label for="bridgeLevel"
+      >18. Bridge Specification : <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="bridgeLevel" value="high_level" /> High
+       Level</label
+      >
+      <label
+       ><input type="radio" name="bridgeLevel" value="submersible" />
+       Submersible</label
+      >
+      <label
+       ><input type="radio" name="bridgeLevel" value="limitedvc" /> Limited
+       V.C.</label
+      >
+      <label
+       ><input type="radio" name="bridgeLevel" value="other" /> Others
+       (Specify)</label
+      >
+     </div>
+     <input
+      type="text"
+      id="bridgeLevelOther"
+      name="bridgeLevelOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="riverPerennial"
+      >19. Whether River is Perennial or Not?:
+      <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label
+       ><input type="radio" name="riverPerennial" value="yes" /> Yes</label
+      >
+      <label><input type="radio" name="riverPerennial" value="no" /> No</label>
+     </div>
+    </div>
+
+    <div class="form-group">
+     <label for="monsoonInspection"
+      >20. Pre/Post Monsoon Inspection Details:</label
+     >
+     <div style="overflow-x: auto; margin-top: 10px">
+      <table
+       style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+       <thead>
+        <tr style="background-color: #f8f9fa">
+         <th
+          style="
+           border: 1px solid #ddd;
+           padding: 10px;
+           text-align: left;
+           font-weight: bold;
+          ">
+          Designation
+         </th>
+         <th
+          style="
+           border: 1px solid #ddd;
+           padding: 10px;
+           text-align: left;
+           font-weight: bold;
+          ">
+          Date
+         </th>
+         <th
+          style="
+           border: 1px solid #ddd;
+           padding: 10px;
+           text-align: left;
+           font-weight: bold;
+          ">
+          AE
+         </th>
+         <th
+          style="
+           border: 1px solid #ddd;
+           padding: 10px;
+           text-align: left;
+           font-weight: bold;
+          ">
+          DEE
+         </th>
+         <th
+          style="
+           border: 1px solid #ddd;
+           padding: 10px;
+           text-align: left;
+           font-weight: bold;
+          ">
+          EE
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+          Pre-Monsoon
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="date"
+           id="preMonsoonDate"
+           name="preMonsoonDate"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="text"
+           id="preMonsoonAE"
+           name="preMonsoonAE"
+           placeholder="Enter AE name"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="text"
+           id="preMonsoonDEE"
+           name="preMonsoonDEE"
+           placeholder="Enter DEE name"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="text"
+           id="preMonsoonEE"
+           name="preMonsoonEE"
+           placeholder="Enter EE name"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+        </tr>
+        <tr>
+         <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+          Post-Monsoon
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="date"
+           id="postMonsoonDate"
+           name="postMonsoonDate"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="text"
+           id="postMonsoonAE"
+           name="postMonsoonAE"
+           placeholder="Enter AE name"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="text"
+           id="postMonsoonDEE"
+           name="postMonsoonDEE"
+           placeholder="Enter DEE name"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+         <td style="border: 1px solid #ddd; padding: 10px">
+          <input
+           type="text"
+           id="postMonsoonEE"
+           name="postMonsoonEE"
+           placeholder="Enter EE name"
+           style="width: 100%; border: none; outline: none" />
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+
+    <div class="form-group">
+     <label for="pastSurvey"
+      >21. Any Survey Carried Out In Past? (Yes/No):
+      <span class="required">*</span></label
+     >
+     <div class="radio-group">
+      <label><input type="radio" name="pastSurvey" value="yes" /> Yes</label>
+      <label><input type="radio" name="pastSurvey" value="no" /> No</label>
+     </div>
+     <input
+      type="text"
+      id="pastSurveyDetails"
+      name="pastSurveyDetails"
+      placeholder="Please provide details of the survey carried out in the past"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="observerFloodLevel"
+      >23a. 1. Observer Flood Level (mtr.) (Current Year):
+      <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="observerFloodLevel"
+      name="observerFloodLevel"
+      step="0.01"
+      placeholder="Enter observer flood level in meters"
+      required />
+    </div>
+
+    <div class="form-group">
+     <label for="designedFloodLevel"
+      >23a. 2. Designed Highest Flood Level (mtr.):
+      <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="designedFloodLevel"
+      name="designedFloodLevel"
+      step="0.01"
+      placeholder="Enter designed highest flood level in meters"
+      required />
+    </div>
+
+    <div class="form-group">
+     <label for="finishedRoadLevel"
+      >23b. Finished Road Level (mtr.): <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="finishedRoadLevel"
+      name="finishedRoadLevel"
+      step="0.01"
+      placeholder="Enter finished road level in meters"
+      required />
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Survey Form</button>
+   </form>
+  </div>
+
+  <script>
+   // Show/hide "other" text fields based on radio button selection
+   document.querySelectorAll('input[name="bridgeType"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("bridgeTypeOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   document.querySelectorAll('input[name="railing"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("railingOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Super-Structure "other" option
+   document
+    .querySelectorAll('input[name="superStructure"]')
+    .forEach((radio) => {
+     radio.addEventListener("change", function () {
+      const otherField = document.getElementById("superStructureOther");
+      otherField.style.display = this.value === "other" ? "block" : "none";
+     });
+    });
+
+   // Sub-Structure "other" option
+   document.querySelectorAll('input[name="subStructure"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("subStructureOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Abutment Type "other" option
+   document.querySelectorAll('input[name="abutmentType"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("abutmentTypeOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Return Details "other" option
+   document.querySelectorAll('input[name="returnDetails"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("returnDetailsOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Foundation "other" option
+   document.querySelectorAll('input[name="foundation"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("foundationOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Bearing "other" option
+   document.querySelectorAll('input[name="bearing"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("bearingOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Approach Type "other" option
+   document.querySelectorAll('input[name="approachType"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("approachTypeOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Bridge Specification "other" option
+   document.querySelectorAll('input[name="bridgeLevel"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("bridgeLevelOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Past Survey "Yes" option
+   document.querySelectorAll('input[name="pastSurvey"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const detailsField = document.getElementById("pastSurveyDetails");
+     detailsField.style.display = this.value === "yes" ? "block" : "none";
+    });
+   });
+
+   // Approach Length calculation
+   function calculateApproachLength() {
+    const lhsValue =
+     parseFloat(document.getElementById("approachLHS").value) || 0;
+    const rhsValue =
+     parseFloat(document.getElementById("approachRHS").value) || 0;
+    const total = lhsValue + rhsValue;
+    document.getElementById("approachLength").value =
+     total.toFixed(2) + " meters";
+   }
+
+   document
+    .getElementById("approachLHS")
+    .addEventListener("input", calculateApproachLength);
+   document
+    .getElementById("approachRHS")
+    .addEventListener("input", calculateApproachLength);
+
+   // Populate construction year dropdown
+   function populateYearDropdown() {
+    const yearSelect = document.getElementById("constructionYear");
+    const currentYear = new Date().getFullYear();
+
+    for (let year = currentYear; year >= 1900; year--) {
+     const option = document.createElement("option");
+     option.value = year;
+     option.textContent = year;
+     yearSelect.appendChild(option);
+    }
+   }
+
+   // Call the function when page loads
+   populateYearDropdown();
+
+   // Dynamic span configuration rows generation
+   document.getElementById("spanCount").addEventListener("change", function () {
+    const selectedValue = parseInt(this.value);
+    const section = document.getElementById("spanConfigurationSection");
+    const rowsContainer = document.getElementById("spanConfigurationRows");
+    const totalLengthSection = document.getElementById("totalLengthSection");
+
+    if (selectedValue > 0) {
+     section.style.display = "block";
+     totalLengthSection.style.display = "block";
+     rowsContainer.innerHTML = "";
+
+     for (let i = 1; i <= selectedValue; i++) {
+      const row = document.createElement("div");
+      row.className = "span-config-row";
+      row.innerHTML = `
+        <div class="row-number">${i}</div>
+        <label for="spanType${i}">Type:</label>
+        <input type="text" id="spanType${i}" name="spanType${i}" placeholder="e.g., Simple Supported" required>
+        <label for="spanLength${i}">Span Length in Meters:</label>
+        <input type="number" id="spanLength${i}" name="spanLength${i}" step="0.01" placeholder="0.00" required>
+        <label for="spanNumber${i}">No. of Span:</label>
+        <input type="number" id="spanNumber${i}" name="spanNumber${i}" min="1" placeholder="1" required>
+      `;
+      rowsContainer.appendChild(row);
+     }
+    } else {
+     section.style.display = "none";
+     totalLengthSection.style.display = "none";
+     rowsContainer.innerHTML = "";
+    }
+   });
+
+   // Form submission handling
+   document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Form submitted successfully!");
+    // Here you can add code to send the form data to a server
+   });
+  </script>
+ </body>
+</html>
