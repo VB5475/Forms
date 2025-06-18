@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge/Structure Survey Form - Evaluation & Remarks</title>
+  <style>
+   body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+   }
+   .form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   }
+   .form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2c3e50;
+   }
+   .form-header h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+   }
+   .form-header h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+   }
+   .form-group {
+    margin-bottom: 20px;
+   }
+   label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+   }
+   input[type="text"],
+   select,
+   textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+   }
+   input[type="text"]:focus,
+   select:focus,
+   textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+   }
+   textarea {
+    resize: vertical;
+    min-height: 120px;
+   }
+   .submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+   }
+   .submit-btn:hover {
+    background-color: #2980b9;
+   }
+   .required {
+    color: #e74c3c;
+   }
+  </style>
+ </head>
+ <body>
+  <div class="form-container">
+   <div class="form-header">
+    <h1>PROFORMA FOR BRIDGE/STRUCTURE SURVEY AND INSPECTION</h1>
+    <h2>C. Evaluation & Remarks</h2>
+   </div>
+
+   <form>
+    <div class="form-group">
+     <label for="conditionState"
+      >1. Condition State as per IRC SP : 40-2019:
+      <span class="required">*</span></label
+     >
+     <select id="conditionState" name="conditionState" required>
+      <option value="">Select Condition State</option>
+      <option value="excellent">Excellent</option>
+      <option value="good">Good</option>
+      <option value="fair">Fair</option>
+      <option value="poor">Poor</option>
+      <option value="critical">Critical</option>
+      <option value="other">Others (Specify)</option>
+     </select>
+     <small style="color: #666; font-style: italic">(Refer Annexure-1)</small>
+     <input
+      type="text"
+      id="conditionStateOther"
+      name="conditionStateOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
+    <div class="form-group">
+     <label for="remarks">2. Remarks: <span class="required">*</span></label>
+     <textarea
+      id="remarks"
+      name="remarks"
+      placeholder="Enter detailed remarks and evaluation comments..."
+      required></textarea>
+    </div>
+
+    <!-- <button type="submit" class="submit-btn">
+     Submit Evaluation & Remarks
+    </button> -->
+   </form>
+
+   <!-- Appendix Section -->
+   <div
+    style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #3498db">
+    <h3
+     style="
+      color: #2c3e50;
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+     ">
+     Appendix
+    </h3>
+
+    <div
+     style="
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      border: 1px solid #e9ecef;
+     ">
+     <ol
+      style="margin: 0; padding-left: 20px; color: #2c3e50; line-height: 1.8">
+      <li><strong>Photographs General</strong></li>
+      <li><strong>Damage/Distressing Photographs</strong></li>
+      <li><strong>Additional Information if any</strong></li>
+      <li><strong>Pre/Post Monsoon Inspection Details</strong></li>
+     </ol>
+    </div>
+
+    <!-- Submit Button after Appendix -->
+    <div style="text-align: center; margin-top: 30px">
+     <button type="button" class="submit-btn" onclick="submitCompleteForm()">
+      Submit Complete Survey Form
+     </button>
+    </div>
+   </div>
+  </div>
+
+  <script>
+   // Show/hide "other" text field based on dropdown selection
+   document
+    .getElementById("conditionState")
+    .addEventListener("change", function () {
+     const otherField = document.getElementById("conditionStateOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+
+   // Form submission handling
+   document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Evaluation & Remarks submitted successfully!");
+    // Here you can add code to send the form data to a server
+   });
+
+   // Complete form submission function
+   function submitCompleteForm() {
+    alert("Complete Survey Form submitted successfully!");
+    // Here you can add code to send all form data to a server
+   }
+  </script>
+ </body>
+</html>

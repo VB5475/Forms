@@ -1,0 +1,3425 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge/Structure Survey Form - Superstructure</title>
+  <style>
+   body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+   }
+   .form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   }
+   .form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2c3e50;
+   }
+   .form-header h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+   }
+   .form-header h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+   }
+   .form-group {
+    margin-bottom: 20px;
+   }
+   label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+   }
+   input[type="text"],
+   input[type="number"],
+   select,
+   textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+   }
+   input[type="text"]:focus,
+   input[type="number"]:focus,
+   select:focus,
+   textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+   }
+   textarea {
+    resize: vertical;
+    min-height: 60px;
+   }
+   .radio-group {
+    margin-top: 5px;
+   }
+   .radio-group label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+   }
+   .radio-group input[type="radio"] {
+    margin-right: 5px;
+   }
+   .checkbox-group {
+    margin-top: 5px;
+   }
+   .checkbox-group label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+   }
+   .checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+   }
+   .submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+   }
+   .submit-btn:hover {
+    background-color: #2980b9;
+   }
+   .next-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+   }
+   .next-btn:hover {
+    background-color: #229954;
+   }
+   .required {
+    color: #e74c3c;
+   }
+  </style>
+ </head>
+ <body>
+  <div class="form-container">
+   <div class="form-header">
+    <h1>PROFORMA FOR BRIDGE/STRUCTURE SURVEY AND INSPECTION</h1>
+    <h2>B. Survey And Condition Assessment</h2>
+   </div>
+
+   <form>
+    <!-- Date of Survey & Inspection Table -->
+    <div style="margin-bottom: 30px; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <tbody>
+       <tr>
+        <td
+         style="
+          border: 1px solid #ddd;
+          padding: 15px;
+          font-weight: bold;
+          width: 30%;
+          background-color: #f8f9fa;
+         ">
+         Date of Survey & Inspection
+        </td>
+        <td style="border: 1px solid #ddd; padding: 15px; width: 70%">
+         <div style="display: flex; gap: 20px; align-items: center">
+          <div style="flex: 1">
+           <label style="display: block; margin-bottom: 5px; font-weight: bold"
+            >From Date:</label
+           >
+           <input
+            type="date"
+            name="survey_from_date"
+            style="
+             width: 100%;
+             padding: 8px;
+             border: 1px solid #bdc3c7;
+             border-radius: 5px;
+             font-size: 14px;
+             box-sizing: border-box;
+            " />
+          </div>
+          <div style="flex: 1">
+           <label style="display: block; margin-bottom: 5px; font-weight: bold"
+            >To Date:</label
+           >
+           <input
+            type="date"
+            name="survey_to_date"
+            style="
+             width: 100%;
+             padding: 8px;
+             border: 1px solid #bdc3c7;
+             border-radius: 5px;
+             font-size: 14px;
+             box-sizing: border-box;
+            " />
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <div style="margin-bottom: 30px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      1. Superstructure
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         ">
+         Observations
+        </th>
+
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) Cracks:<br />(Length, width, location)
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="cracks_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="cracks_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="cracks_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="cracks_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="cracks_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="cracks_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         b) Leaching:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leaching_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leaching_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leaching_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leaching_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="leaching_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="leaching_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         c) Honey Combing:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="honeycombing_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="honeycombing_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="honeycombing_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="honeycombing_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="honeycombing_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="honeycombing_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         d) Exposed Reinforcement:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="exposed_reinforcement_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="exposed_reinforcement_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="exposed_reinforcement_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="exposed_reinforcement_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="exposed_reinforcement_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="exposed_reinforcement_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         e) Leakage Patches & Watermarks:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leakage_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leakage_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leakage_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="leakage_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="leakage_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="leakage_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         f) Spalling:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="spalling_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="spalling_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="spalling_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="spalling_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="spalling_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="spalling_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         g) Rust Marks:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="rust_marks_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="rust_marks_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="rust_marks_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="rust_marks_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="rust_marks_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="rust_marks_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         h) Shuttering Defects:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="shuttering_defects_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="shuttering_defects_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="shuttering_defects_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="shuttering_defects_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="shuttering_defects_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="shuttering_defects_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         i) Delamination:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="delamination_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="delamination_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="delamination_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="delamination_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="delamination_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="delamination_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         j) Any Other Specify<br />(i.e. vegetation):
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="other_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="other_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="other_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="other_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="other_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="other_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         1. Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="totalAmount"
+          name="totalAmount"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Expansion Joint Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      2. Expansion Joint
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Observations
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) Expansion Joint
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="expansion_joint_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="expansion_joint_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="expansion_joint_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="expansion_joint_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="expansion_joint_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="expansion_joint_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         b) Drainage Spout
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="drainage_spout_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="drainage_spout_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="drainage_spout_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="drainage_spout_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="drainage_spout_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="drainage_spout_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         c) Details of Utility passing through bridge
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="utility_details_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="utility_details_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="utility_details_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="utility_details_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="utility_details_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="utility_details_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="expansionJointTotal"
+          name="expansionJointTotal"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Railing Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      3. Railing
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Observation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) RCC parapet/ pipe railing/ crash barrier
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="railing_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="railing_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="railing_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="railing_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="railing_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="railing_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="railingTotal"
+          name="railingTotal"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Superstructure Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      4. Substructure
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Observation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) Cracks :<br />(Length, width, location)
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_cracks_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_cracks_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_cracks_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_cracks_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_cracks_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_cracks_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         b) Honey Combing :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_honeycombing_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_honeycombing_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_honeycombing_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_honeycombing_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_honeycombing_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_honeycombing_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         c) Exposed Reinforcement :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_exposed_reinforcement_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_exposed_reinforcement_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_exposed_reinforcement_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_exposed_reinforcement_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_exposed_reinforcement_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_exposed_reinforcement_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         d) Spalling :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_spalling_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_spalling_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_spalling_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_spalling_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_spalling_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_spalling_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         e) Rust Marks :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_rust_marks_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_rust_marks_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_rust_marks_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_rust_marks_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_rust_marks_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_rust_marks_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         f) Shuttering Defects :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_shuttering_defects_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_shuttering_defects_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_shuttering_defects_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_shuttering_defects_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_shuttering_defects_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_shuttering_defects_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         g) Delamination :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_delamination_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_delamination_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_delamination_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_delamination_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_delamination_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_delamination_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         h) Tilting If Any :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_tilting_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_tilting_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_tilting_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_tilting_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_tilting_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_tilting_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         i) Any Other Specify (i.e. Vegetation/Scouring) :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_other_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_other_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_other_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="superstructure_other_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_other_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="superstructure_other_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="superstructureTotal"
+          name="superstructureTotal"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Foundation Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      5. Foundation (Open foundation / pile/ well/ well cap etc.)
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Observation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) Cracks :<br />(Length, width, location)
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_cracks_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_cracks_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_cracks_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_cracks_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_cracks_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_cracks_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         b) Leaching :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_leaching_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_leaching_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_leaching_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_leaching_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_leaching_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_leaching_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         c) Honey Combing :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_honeycombing_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_honeycombing_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_honeycombing_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_honeycombing_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_honeycombing_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_honeycombing_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         d) Exposed Reinforcement :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_exposed_reinforcement_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_exposed_reinforcement_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_exposed_reinforcement_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_exposed_reinforcement_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_exposed_reinforcement_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_exposed_reinforcement_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         e) Spalling :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_spalling_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_spalling_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_spalling_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_spalling_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_spalling_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_spalling_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         f) Rust Marks :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_rust_marks_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_rust_marks_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_rust_marks_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_rust_marks_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_rust_marks_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_rust_marks_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         g) Shuttering Defects :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_shuttering_defects_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_shuttering_defects_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_shuttering_defects_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_shuttering_defects_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_shuttering_defects_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_shuttering_defects_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         h) Delamination :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_delamination_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_delamination_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_delamination_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_delamination_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_delamination_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_delamination_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         i) Settlement :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_settlement_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_settlement_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_settlement_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_settlement_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_settlement_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_settlement_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         j) Tilting If Any :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_tilting_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_tilting_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_tilting_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_tilting_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_tilting_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_tilting_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         k) Scour Details for Each Foundation :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_scour_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_scour_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         l) Design Score Level:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_scour_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_scour_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_scour_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         m) Any Other Specify :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_other_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_other_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_other_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="foundation_other_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_other_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="foundation_other_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="foundationTotal"
+          name="foundationTotal"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Bearing Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      6. Bearing
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Observation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) Displacement :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_displacement_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_displacement_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_displacement_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_displacement_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="bearing_displacement_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="bearing_displacement_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         b) Distortion :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_distortion_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_distortion_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_distortion_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_distortion_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="bearing_distortion_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="bearing_distortion_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         c) Corrosion :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_corrosion_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_corrosion_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_corrosion_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="bearing_corrosion_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="bearing_corrosion_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="bearing_corrosion_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="bearingTotal"
+          name="bearingTotal"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Approaches & Other Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      7. Approaches & Other
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 20%;
+         "></th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Observation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Recommendation
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 15%;
+         ">
+         Tentative QTY(For Repairs)
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Unit
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 10%;
+         ">
+         Rate
+        </th>
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 5%;
+         ">
+         Amount
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         a) Settlement :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_settlement_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_settlement_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_settlement_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_settlement_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="approaches_settlement_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="approaches_settlement_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold">
+         b) Erosion of Slope :
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_erosion_observation"
+          placeholder="Enter observations"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_erosion_recommendation"
+          placeholder="Enter recommendation"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_erosion_qty"
+          placeholder="Enter QTY"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="text"
+          name="approaches_erosion_unit"
+          placeholder="Unit"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="approaches_erosion_rate"
+          placeholder="Rate"
+          step="0.01"
+          style="width: 100%; border: none; outline: none" />
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          name="approaches_erosion_amount"
+          placeholder="Amount"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #f8f9fa;
+          " />
+        </td>
+       </tr>
+       <tr style="background-color: #e8f4fd">
+        <td
+         colspan="6"
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          font-weight: bold;
+          text-align: right;
+         ">
+         Total Amount:
+        </td>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <input
+          type="number"
+          id="approachesTotal"
+          name="approachesTotal"
+          placeholder="Total"
+          step="0.01"
+          readonly
+          style="
+           width: 100%;
+           border: none;
+           outline: none;
+           background-color: #e8f4fd;
+           font-weight: bold;
+          " />
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <!-- Grand Total Table -->
+    <div style="margin-bottom: 30px; margin-top: 40px">
+     <h3
+      style="
+       color: #2c3e50;
+       font-size: 20px;
+       margin-bottom: 15px;
+       padding-bottom: 10px;
+       border-bottom: 2px solid #3498db;
+      ">
+      8. Grand Total (Sum of 1 to 7 )
+     </h3>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px">
+     <table
+      style="width: 100%; border-collapse: collapse; border: 1px solid #ddd">
+      <thead>
+       <tr style="background-color: #f8f9fa">
+        <th
+         style="
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          font-weight: bold;
+          width: 100%;
+         ">
+         Details of Repairing Work Carried out if any
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="border: 1px solid #ddd; padding: 10px">
+         <label style="display: block; margin-bottom: 5px; font-weight: bold"
+          >Explain in Detail:</label
+         >
+         <textarea
+          name="repair_work_details"
+          placeholder="Enter detailed explanation of repairing work carried out..."
+          style="
+           width: 100%;
+           min-height: 100px;
+           padding: 10px;
+           border: 1px solid #bdc3c7;
+           border-radius: 5px;
+           font-size: 14px;
+           resize: vertical;
+           box-sizing: border-box;
+          "></textarea>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+
+    <button type="submit" class="submit-btn">
+     Submit Survey And Condition Assessment
+    </button>
+    <button
+     type="button"
+     class="next-btn"
+     onclick="window.location.href='IndexC.html'">
+     Next
+    </button>
+   </form>
+  </div>
+
+  <script>
+   // Show/hide "other" text fields based on radio button selection
+   document
+    .querySelectorAll('input[name="superstructureType"]')
+    .forEach((radio) => {
+     radio.addEventListener("change", function () {
+      const otherField = document.getElementById("superstructureTypeOther");
+      otherField.style.display = this.value === "other" ? "block" : "none";
+     });
+    });
+
+   document
+    .querySelectorAll('input[name="expansionJoint"]')
+    .forEach((radio) => {
+     radio.addEventListener("change", function () {
+      const otherField = document.getElementById("expansionJointOther");
+      otherField.style.display = this.value === "other" ? "block" : "none";
+     });
+    });
+
+   document.querySelectorAll('input[name="waterproofing"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("waterproofingOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   document.querySelectorAll('input[name="wearingCoat"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("wearingCoatOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
+   // Concrete Grade "other" option
+   document
+    .getElementById("concreteGrade")
+    .addEventListener("change", function () {
+     const otherField = document.getElementById("concreteGradeOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+
+   // Steel Grade "other" option
+   document
+    .getElementById("steelGrade")
+    .addEventListener("change", function () {
+     const otherField = document.getElementById("steelGradeOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+
+   // Form submission handling
+   document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Superstructure survey submitted successfully!");
+    // Here you can add code to send the form data to a server
+   });
+  </script>
+ </body>
+</html>

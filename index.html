@@ -103,6 +103,20 @@
    .submit-btn:hover {
     background-color: #2980b9;
    }
+   .next-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+   }
+   .next-btn:hover {
+    background-color: #229954;
+   }
    .required {
     color: #e74c3c;
    }
@@ -166,6 +180,44 @@
     </div>
 
     <div class="form-group">
+     <div style="display: flex; align-items: center; gap: 20px">
+      <label style="min-width: 200px"></label>
+       Coordinates: <span class="required">*</span></label
+      >
+      <div style="display: flex; gap: 15px; align-items: center">
+       <div>
+        <label
+         for="latitude"
+         style="font-size: 12px; color: #666; margin-right: 5px"
+         >a. Latitude:</label
+        >
+        <input
+         type="text"
+         id="latitude"
+         name="latitude"
+         placeholder="Enter latitude"
+         required
+         style="width: 150px" />
+       </div>
+       <div>
+        <label
+         for="longitude"
+         style="font-size: 12px; color: #666; margin-right: 5px"
+         >b. Longitude:</label
+        >
+        <input
+         type="text"
+         id="longitude"
+         name="longitude"
+         placeholder="Enter longitude"
+         required
+         style="width: 150px" />
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="form-group">
      <label for="circleName"
       >4a. Name of Circle: <span class="required">*</span></label
      >
@@ -188,10 +240,10 @@
 
     <div class="form-group">
      <label for="spanCount"
-      >5. No. of Span: <span class="required">*</span></label
+      >5. Span Configuration: <span class="required">*</span></label
      >
      <select id="spanCount" name="spanCount" required>
-      <option value="">Select number of spans</option>
+      <option value="">Select Number of Diffrent Types of span</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -208,7 +260,7 @@
        border-bottom: 2px solid #3498db;
        padding-bottom: 5px;
       ">
-      5a. Various Configuration of Span (Span Length & Arrangement)
+      5a. Span Length & Arrangement
      </h3>
      <div id="spanConfigurationRows"></div>
     </div>
@@ -254,20 +306,17 @@
       >
       <label
        ><input type="radio" name="bridgeType" value="balanced" />
-       Balanced</label
+       Balanced Cantilever</label
       >
-      <label
-       ><input type="radio" name="bridgeType" value="cantilever" />
-       Cantilever</label
-      >
+     
       <label><input type="radio" name="bridgeType" value="arch" /> Arch</label>
       <label
        ><input type="radio" name="bridgeType" value="integrated" />
-       Integrated</label
+       Integral</label
       >
       <label
        ><input type="radio" name="bridgeType" value="cable_stayed" /> Cable
-       Stayed</label
+       Supported</label
       >
       <label
        ><input type="radio" name="bridgeType" value="suspension" />
@@ -277,7 +326,7 @@
        ><input type="radio" name="bridgeType" value="culvert" /> Culvert</label
       >
       <label
-       ><input type="radio" name="bridgeType" value="sub_drain" /> Sub
+       ><input type="radio" name="bridgeType" value="sub_drain" /> Slab
        Drain</label
       >
       <label
@@ -300,7 +349,7 @@
      <div class="radio-group">
       <label
        ><input type="radio" name="superStructure" value="solid_slab" /> Solid
-       Slab, PSC Solid Slab</label
+       Slab</label
       >
       <label
        ><input type="radio" name="superStructure" value="psc_solid_slab" /> PSC
@@ -312,7 +361,13 @@
       >
       <label
        ><input type="radio" name="superStructure" value="psc_girder_box" /> PSC
-       Girder, PSC Box, RCC Box</label
+       Girder</label
+      >
+        <label
+       ><input type="radio" name="superStructure" value="steel_girder" /> PSC Box Girder </label
+      >
+        <label
+       ><input type="radio" name="superStructure" value="steel_girder" /> RCC Box Girder</label
       >
       <label
        ><input type="radio" name="superStructure" value="steel_girder" /> Steel
@@ -333,7 +388,7 @@
 
     <div class="form-group">
      <label for="weavingCoat"
-      >8b. Type of Weaving Coat: <span class="required">*</span></label
+      >8b. Type of Wearing Coat: <span class="required">*</span></label
      >
      <input
       type="text"
@@ -362,7 +417,11 @@
       >
       <label
        ><input type="radio" name="subStructure" value="circular_piers" />
-       Circular Piers</label
+     RCC Circular Piers</label
+      >
+      <label
+       ><input type="radio" name="subStructure" value="circular_piers" />
+     RCC Rectangular Piers</label
       >
       <label
        ><input type="radio" name="subStructure" value="other" /> Others
@@ -392,7 +451,7 @@
       >
       <label
        ><input type="radio" name="abutmentType" value="counterport" />
-       Counterport</label
+       Counterfort</label
       >
       <label
        ><input type="radio" name="abutmentType" value="other" /> Others
@@ -476,7 +535,7 @@
       <label
        ><input type="radio" name="bearing" value="tar_paper" /> Tar Paper</label
       >
-      <label><input type="radio" name="bearing" value="pot" /> Pot</label>
+      <label><input type="radio" name="bearing" value="pot" /> POT-PTFE</label>
       <label
        ><input type="radio" name="bearing" value="metallic" /> Metallic</label
       >
@@ -488,7 +547,7 @@
        ><input type="radio" name="bearing" value="spherical" /> Spherical</label
       >
       <label
-       ><input type="radio" name="bearing" value="elastomer" /> Elastomer</label
+       ><input type="radio" name="bearing" value="elastomer" /> Elastomeric</label
       >
       <label
        ><input type="radio" name="bearing" value="other" /> Others
@@ -693,7 +752,7 @@
       >
       <label
        ><input type="radio" name="bridgeLevel" value="limitedvc" /> Limited
-       V.C.</label
+     With Limited  Vertical Clearance</label
       >
       <label
        ><input type="radio" name="bridgeLevel" value="other" /> Others
@@ -874,7 +933,7 @@
 
     <div class="form-group">
      <label for="observerFloodLevel"
-      >23a. 1. Observer Flood Level (mtr.) (Current Year):
+      >22a. 1. Observed Flood Level (mtr.) (Current Year):
       <span class="required">*</span></label
      >
      <input
@@ -888,7 +947,7 @@
 
     <div class="form-group">
      <label for="designedFloodLevel"
-      >23a. 2. Designed Highest Flood Level (mtr.):
+      >22a. 2. Designed Highest Flood Level (mtr.):
       <span class="required">*</span></label
      >
      <input
@@ -902,7 +961,7 @@
 
     <div class="form-group">
      <label for="finishedRoadLevel"
-      >23b. Finished Road Level (mtr.): <span class="required">*</span></label
+      >22b. Finished Road Level (mtr.): <span class="required">*</span></label
      >
      <input
       type="number"
@@ -914,6 +973,7 @@
     </div>
 
     <button type="submit" class="submit-btn">Submit Survey Form</button>
+    <button type="button" class="next-btn" onclick="window.location.href='indexB.html'">Next</button>
    </form>
   </div>
 
