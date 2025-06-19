@@ -278,6 +278,26 @@
       placeholder="in meters"
       required />
     </div>
+
+    <!-- 5c. Types of Bridges -->
+    <div class="form-group" id="classificationOfBridgeSection" style="display: none">
+     <label for="classificationOfBridge">
+      5c.  Classification of Bridge: <span class="required">*</span>
+     </label>
+     <div class="radio-group">
+      <label><input type="radio" name="classificationOfBridge" value="major_bridge" required /> Major Bridge</label>
+      <label><input type="radio" name="classificationOfBridge" value="minor_bridge" /> Minor Bridge</label>
+      <label><input type="radio" name="classificationOfBridge" value="structures" /> Structures (Box Culvert, Pipe Culvert, Slabdrain etc.)</label>
+      <label><input type="radio" name="classificationOfBridge" value="other" /> Others (Specify)</label>
+     </div>
+     <input
+      type="text"
+      id="classificationOfBridgeOther"
+      name="classificationOfBridgeOther"
+      placeholder="If other, please specify"
+      style="margin-top: 10px; display: none" />
+    </div>
+
     <div class="form-group">
      <label for="angleCrossing"
       >6. Angle of crossing WRT(with respect to flow) :
@@ -372,6 +392,12 @@
       <label
        ><input type="radio" name="superStructure" value="steel_girder" /> Steel
        Girder</label
+      >
+       <label
+       ><input type="radio" name="superStructure" value="steel_girder" /> PSC Voided Slab</label
+      >
+       <label
+       ><input type="radio" name="superStructure" value="steel_girder" /> RCC Voided Slab</label
       >
       <label
        ><input type="radio" name="superStructure" value="other" /> Others
@@ -697,7 +723,15 @@
      <textarea
       id="repairWork"
       name="repairWork"
-      placeholder="Enter details of repair or strengthening work"></textarea>
+      placeholder="Enter details of repair or strengthening work of Structure"></textarea>
+      <textarea
+      id="repairWork"
+      name="repairWork"
+      placeholder="Enter details of repair or strengthening work of Sub Structure"></textarea>
+      <textarea
+      id="repairWork"
+      name="repairWork"
+      placeholder="Enter details of repair or strengthening work of Foundation"></textarea>
     </div>
 
     <div class="form-group">
@@ -729,6 +763,20 @@
     </div>
 
     <div class="form-group">
+     <label for="approachCarriageway"
+      >16c. Approach Road Carriage Way (mtr.):
+      <span class="required">*</span></label
+     >
+     <input
+      type="number"
+      id="approachCarriageway"
+      name="approachCarriageway"
+      step="0.01"
+      placeholder="in meters"
+      required />
+    </div>
+
+    <div class="form-group">
      <label for="constructionYear"
       >17. Year of Construction: <span class="required">*</span></label
      >
@@ -751,7 +799,7 @@
        Submersible</label
       >
       <label
-       ><input type="radio" name="bridgeLevel" value="limitedvc" /> Limited
+       ><input type="radio" name="bridgeLevel" value="limitedvc" /> 
      With Limited  Vertical Clearance</label
       >
       <label
@@ -1067,6 +1115,14 @@
     });
    });
 
+   // 5c.  Classification of Bridge "other" option
+   document.querySelectorAll('input[name="classificationOfBridge"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
+     const otherField = document.getElementById("classificationOfBridgeOther");
+     otherField.style.display = this.value === "other" ? "block" : "none";
+    });
+   });
+
    // Approach Length calculation
    function calculateApproachLength() {
     const lhsValue =
@@ -1107,10 +1163,12 @@
     const section = document.getElementById("spanConfigurationSection");
     const rowsContainer = document.getElementById("spanConfigurationRows");
     const totalLengthSection = document.getElementById("totalLengthSection");
+    const classificationOfBridgeSection = document.getElementById("classificationOfBridgeSection");
 
     if (selectedValue > 0) {
      section.style.display = "block";
      totalLengthSection.style.display = "block";
+     classificationOfBridgeSection.style.display = "block";
      rowsContainer.innerHTML = "";
 
      for (let i = 1; i <= selectedValue; i++) {
@@ -1130,6 +1188,7 @@
     } else {
      section.style.display = "none";
      totalLengthSection.style.display = "none";
+     classificationOfBridgeSection.style.display = "none";
      rowsContainer.innerHTML = "";
     }
    });
