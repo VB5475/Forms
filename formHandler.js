@@ -55,9 +55,10 @@ function setLoadingState(buttonElement, isLoading) {
     }
 }
 
-// Utility function to send data to Google Sheets
+// Utility function to send data to backend
 async function sendToGoogleSheets(formData, formType, actionType) {
     const payload = {
+        assessment_id: localStorage.getItem('assessment_id') || null,
         ...formData,
         form_type: formType,
         action_type: actionType,
@@ -65,7 +66,7 @@ async function sendToGoogleSheets(formData, formType, actionType) {
     };
 
     try {
-        const response = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+        const response = await fetch('http://localhost:4000/api/forms', {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -76,6 +77,9 @@ async function sendToGoogleSheets(formData, formType, actionType) {
         const result = await response.json();
 
         if (result.status === 'success') {
+            if (result.assessment_id) {
+                localStorage.setItem('assessment_id', result.assessment_id);
+            }
             return { success: true, data: result };
         } else {
             throw new Error(result.message || 'Submission failed');
@@ -105,7 +109,7 @@ function handleBridgeDetailsNext() {
             if (result.success) {
                 alert('Bridge Details saved! Proceeding to Survey Assessment...');
                 // Navigate to Form 2 - adjust URL as needed
-                window.location.href = 'survey-assessment.html';
+                window.location.href = 'indexB.html';
             } else {
                 alert('Error saving Bridge Details: ' + result.error);
             }
@@ -137,23 +141,32 @@ function handleBridgeDetailsSave() {
 }
 
 function getBridgeDetailsData() {
-    // UPDATE THESE FIELD NAMES TO MATCH YOUR ACTUAL BRIDGE DETAILS FORM FIELDS
-    return {
-        bridge_name: document.getElementById('bridge-name')?.value || '',
-        location: document.getElementById('bridge-location')?.value || '',
-        type: document.getElementById('bridge-type')?.value || '',
-        year_built: document.getElementById('year-built')?.value || '',
-        span_length: document.getElementById('span-length')?.value || '',
-        width: document.getElementById('bridge-width')?.value || '',
-        material: document.getElementById('bridge-material')?.value || '',
-        traffic_load: document.getElementById('traffic-load')?.value || '',
-        // Add more Bridge Details specific fields here
-    };
+    // Serialize ALL inputs/textareas/selects by name from the Form 1 element
+    const formElement = document.getElementById(CONFIG.FORMS.form1.formId);
+    const collectedData = {};
+
+    if (formElement) {
+        const formData = new FormData(formElement);
+        for (const [fieldName, fieldValue] of formData.entries()) {
+            collectedData[fieldName] = fieldValue;
+        }
+    } else {
+        // Fallback: collect by querying all named inputs in the document
+        const controls = document.querySelectorAll('input[name], textarea[name], select[name]');
+        controls.forEach(control => {
+            collectedData[control.name] = control.value;
+        });
+    }
+
+    return collectedData;
 }
 
 function validateBridgeDetailsData(data) {
-    // UPDATE VALIDATION RULES FOR YOUR BRIDGE DETAILS REQUIRED FIELDS
-    return data.bridge_name && data.location && data.type;
+    // If key fields from Form 1 exist, require them; otherwise allow submission
+    if ('riverName' in data || 'roadName' in data || 'chainage' in data) {
+        return Boolean(data.riverName) && Boolean(data.roadName) && Boolean(data.chainage);
+    }
+    return true;
 }
 
 // FORM 2 HANDLERS - Survey Assessment
@@ -175,7 +188,7 @@ function handleSurveyAssessmentNext() {
             if (result.success) {
                 alert('Survey Assessment saved! Proceeding to Evaluation & Remarks...');
                 // Navigate to Form 3 - adjust URL as needed
-                window.location.href = 'evaluation-remarks.html';
+                window.location.href = 'IndexC.html';
             } else {
                 alert('Error saving Survey Assessment: ' + result.error);
             }
@@ -207,24 +220,34 @@ function handleSurveyAssessmentSave() {
 }
 
 function getSurveyAssessmentData() {
-    // UPDATE THESE FIELD NAMES TO MATCH YOUR ACTUAL SURVEY ASSESSMENT FORM FIELDS
-    return {
-        structural_condition: document.getElementById('structural-condition')?.value || '',
-        deck_condition: document.getElementById('deck-condition')?.value || '',
-        superstructure_condition: document.getElementById('superstructure-condition')?.value || '',
-        substructure_condition: document.getElementById('substructure-condition')?.value || '',
-        bearing_condition: document.getElementById('bearing-condition')?.value || '',
-        expansion_joints: document.getElementById('expansion-joints')?.value || '',
-        drainage_system: document.getElementById('drainage-system')?.value || '',
-        safety_features: document.getElementById('safety-features')?.value || '',
-        load_capacity: document.getElementById('load-capacity')?.value || '',
-        // Add more Survey Assessment specific fields here
-    };
+    // Serialize ALL inputs/textareas/selects by name from the Form 2 element
+    const formElement = document.getElementById(CONFIG.FORMS.form2.formId);
+    const collectedData = {};
+
+    if (formElement) {
+        const formData = new FormData(formElement);
+        for (const [fieldName, fieldValue] of formData.entries()) {
+            // If multiple controls share the same name, last one wins. Adjust if needed.
+            collectedData[fieldName] = fieldValue;
+        }
+    } else {
+        // Fallback: collect by querying all named inputs in the document
+        const controls = document.querySelectorAll('input[name], textarea[name], select[name]');
+        controls.forEach(control => {
+            collectedData[control.name] = control.value;
+        });
+    }
+
+    return collectedData;
 }
 
 function validateSurveyAssessmentData(data) {
-    // UPDATE VALIDATION RULES FOR YOUR SURVEY ASSESSMENT REQUIRED FIELDS
-    return data.structural_condition && data.deck_condition && data.load_capacity;
+    // Basic validation: ensure survey dates exist if present in the form
+    if ('survey_from_date' in data || 'survey_to_date' in data) {
+        return Boolean(data.survey_from_date) && Boolean(data.survey_to_date);
+    }
+    // If dates not present, allow submission
+    return true;
 }
 
 // FORM 3 HANDLERS - Evaluation & Remarks
@@ -245,6 +268,11 @@ function handleEvaluationRemarksSave() {
 
             if (result.success) {
                 alert('Bridge Assessment completed successfully! Thank you!');
+                // Finalize on backend
+                const assessmentId = localStorage.getItem('assessment_id');
+                if (assessmentId) {
+                    fetch(`http://localhost:4000/api/assessments/${assessmentId}/finalize`, { method: 'POST' });
+                }
                 // Redirect to success page or reset
                 window.location.href = 'assessment-complete.html';
             } else {
@@ -254,24 +282,32 @@ function handleEvaluationRemarksSave() {
 }
 
 function getEvaluationRemarksData() {
-    // UPDATE THESE FIELD NAMES TO MATCH YOUR ACTUAL EVALUATION & REMARKS FORM FIELDS
-    return {
-        overall_rating: document.getElementById('overall-rating')?.value || '',
-        priority_level: document.getElementById('priority-level')?.value || '',
-        recommended_actions: document.getElementById('recommended-actions')?.value || '',
-        maintenance_required: document.getElementById('maintenance-required')?.value || '',
-        repair_urgency: document.getElementById('repair-urgency')?.value || '',
-        cost_estimate: document.getElementById('cost-estimate')?.value || '',
-        inspector_name: document.getElementById('inspector-name')?.value || '',
-        inspection_date: document.getElementById('inspection-date')?.value || '',
-        additional_remarks: document.getElementById('additional-remarks')?.value || '',
-        // Add more Evaluation & Remarks specific fields here
-    };
+    // Serialize ALL inputs/textareas/selects by name from the Form 3 element
+    const formElement = document.getElementById(CONFIG.FORMS.form3.formId);
+    const collectedData = {};
+
+    if (formElement) {
+        const formData = new FormData(formElement);
+        for (const [fieldName, fieldValue] of formData.entries()) {
+            collectedData[fieldName] = fieldValue;
+        }
+    } else {
+        // Fallback: collect by querying all named inputs in the document
+        const controls = document.querySelectorAll('input[name], textarea[name], select[name]');
+        controls.forEach(control => {
+            collectedData[control.name] = control.value;
+        });
+    }
+
+    return collectedData;
 }
 
 function validateEvaluationRemarksData(data) {
-    // UPDATE VALIDATION RULES FOR YOUR EVALUATION & REMARKS REQUIRED FIELDS
-    return data.overall_rating && data.priority_level && data.inspector_name;
+    // If key fields from Form 3 exist, require them; otherwise allow submission
+    if ('conditionState' in data || 'remarks' in data) {
+        return Boolean(data.conditionState) && Boolean(data.remarks);
+    }
+    return true;
 }
 
 // AUTO-INITIALIZATION
