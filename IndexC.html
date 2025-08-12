@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bridge/Structure Survey Form - Evaluation & Remarks</title>
+  <script src="./formHandler.js"></script>
   <style>
    body {
     font-family: Arial, sans-serif;
@@ -163,7 +164,11 @@
 
     <!-- Submit Button after Appendix -->
     <div style="text-align: center; margin-top: 30px">
-     <button type="button" class="submit-btn" onclick="submitCompleteForm()">
+     <button
+      type="button"
+      class="submit-btn"
+      id="evaluation-remarks-save-btn"
+      onclick="submitCompleteForm()">
       Submit Complete Survey Form
      </button>
     </div>
