@@ -4,30 +4,30 @@ const sql = require('mssql');
 // Different connection configurations to try
 const connections = [
   {
-    name: "localhost\\CIPL24",
+    name: "localhost\\VB5475\SQLEXPRESS",
     config: {
-      server: 'localhost\\CIPL24',
+      server: 'localhost\\VB5475\SQLEXPRESS',
       database: 'master',
       options: {
         trustedConnection: true,
         enableArithAbort: true,
         encrypt: false,
         trustServerCertificate: true,
-        instanceName: 'CIPL24'
+        instanceName: 'VB5475\SQLEXPRESS'
       }
     }
   },
   {
-    name: "127.0.0.1\\CIPL24", 
+    name: "127.0.0.1\\VB5475\SQLEXPRESS",
     config: {
-      server: '127.0.0.1\\CIPL24',
+      server: '127.0.0.1\\VB5475\SQLEXPRESS',
       database: 'master',
       options: {
         trustedConnection: true,
         enableArithAbort: true,
         encrypt: false,
         trustServerCertificate: true,
-        instanceName: 'CIPL24'
+        instanceName: 'VB5475\SQLEXPRESS'
       }
     }
   },
@@ -42,21 +42,21 @@ const connections = [
         enableArithAbort: true,
         encrypt: false,
         trustServerCertificate: true,
-        instanceName: 'CIPL24'
+        instanceName: 'VB5475\SQLEXPRESS'
       }
     }
   },
   {
-    name: ".\\CIPL24",
+    name: ".\\VB5475\SQLEXPRESS",
     config: {
-      server: '.\\CIPL24',
+      server: '.\\VB5475\SQLEXPRESS',
       database: 'master',
       options: {
         trustedConnection: true,
         enableArithAbort: true,
         encrypt: false,
         trustServerCertificate: true,
-        instanceName: 'CIPL24'
+        instanceName: 'VB5475\SQLEXPRESS'
       }
     }
   }
