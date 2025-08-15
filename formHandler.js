@@ -328,36 +328,40 @@ function handleBridgeDetailsNext() {
 
     const formData = getBridgeDetailsData();
 
-    if (!validateBridgeDetailsData(formData)) {
-        alert('Please fill in all required fields for Bridge Details');
-        return;
-    }
+    // if (!validateBridgeDetailsData(formData)) {
+    //     alert('Please fill in all required fields for Bridge Details');
+    //     return;
+    // }
 
     setLoadingState(nextBtn, true);
 
-    submitFormData(formData, 'form1', 'next')
-        .then(results => {
-            setLoadingState(nextBtn, false);
 
-            if (results.success) {
-                let message = 'Bridge Details saved!';
-                if (results.server && results.server.assessment_id) {
-                    message += ` Assessment ID: ${results.server.assessment_id}.`;
-                }
-                message += ' Proceeding to Survey Assessment...';
 
-                alert(message);
-                // Navigate to Form 2 - adjust URL as needed
-                window.location.href = 'indexB.html';
-            } else {
-                alert('Error saving Bridge Details. Please try again.');
-            }
-        })
-        .catch(error => {
-            setLoadingState(nextBtn, false);
-            console.error('Error in handleBridgeDetailsNext:', error);
-            alert('Error saving Bridge Details: ' + error.message);
-        });
+    window.location.href = 'indexB.html';
+
+    // submitFormData(formData, 'form1', 'next')
+    //     .then(results => {
+    //         setLoadingState(nextBtn, false);
+
+    //         if (results.success) {
+    //             let message = 'Bridge Details saved!';
+    //             if (results.server && results.server.assessment_id) {
+    //                 message += ` Assessment ID: ${results.server.assessment_id}.`;
+    //             }
+    //             message += ' Proceeding to Survey Assessment...';
+
+    //             alert(message);
+    //             // Navigate to Form 2 - adjust URL as needed
+
+    //         } else {
+    //             alert('Error saving Bridge Details. Please try again.');
+    //         }
+    //     })
+    //     .catch(error => {
+    //         setLoadingState(nextBtn, false);
+    //         console.error('Error in handleBridgeDetailsNext:', error);
+    //         alert('Error saving Bridge Details: ' + error.message);
+    //     });
 }
 
 function handleBridgeDetailsSave() {
@@ -576,24 +580,24 @@ function handleSurveyAssessmentNext() {
     // }
 
     setLoadingState(nextBtn, true);
+    window.location.href = 'IndexC.html';
+    // submitFormData(formData, 'form2', 'next')
+    //     .then(results => {
+    //         setLoadingState(nextBtn, false);
 
-    submitFormData(formData, 'form2', 'next')
-        .then(results => {
-            setLoadingState(nextBtn, false);
+    //         if (results.success) {
+    //             alert('Survey Assessment saved! Proceeding to Evaluation & Remarks...');
+    //             // Navigate to Form 3 - adjust URL as needed
 
-            if (results.success) {
-                alert('Survey Assessment saved! Proceeding to Evaluation & Remarks...');
-                // Navigate to Form 3 - adjust URL as needed
-                window.location.href = 'evaluation-remarks.html';
-            } else {
-                alert('Error saving Survey Assessment. Please try again.');
-            }
-        })
-        .catch(error => {
-            setLoadingState(nextBtn, false);
-            console.error('Error in handleSurveyAssessmentNext:', error);
-            alert('Error saving Survey Assessment: ' + error.message);
-        });
+    //         } else {
+    //             alert('Error saving Survey Assessment. Please try again.');
+    //         }
+    //     })
+    //     .catch(error => {
+    //         setLoadingState(nextBtn, false);
+    //         console.error('Error in handleSurveyAssessmentNext:', error);
+    //         alert('Error saving Survey Assessment: ' + error.message);
+    //     });
 }
 
 function handleSurveyAssessmentSave() {
@@ -662,44 +666,44 @@ function handleEvaluationRemarksSave() {
 
     const formData = getEvaluationRemarksData();
 
-    if (!validateEvaluationRemarksData(formData)) {
-        alert('Please fill in all required fields for Evaluation & Remarks');
-        return;
-    }
+    // if (!validateEvaluationRemarksData(formData)) {
+    //     alert('Please fill in all required fields for Evaluation & Remarks');
+    //     return;
+    // }
 
     setLoadingState(saveBtn, true);
 
     // First save the form data
-    submitFormData(formData, 'form3', 'save')
-        .then(results => {
-            if (results.success && currentAssessmentId) {
-                // Then finalize the assessment
-                return finalizeAssessment(currentAssessmentId);
-            } else {
-                throw new Error('Failed to save evaluation remarks');
-            }
-        })
-        .then(finalized => {
-            setLoadingState(saveBtn, false);
+    // submitFormData(formData, 'form3', 'save')
+    //     .then(results => {
+    //         if (results.success && currentAssessmentId) {
+    //             // Then finalize the assessment
+    //             return finalizeAssessment(currentAssessmentId);
+    //         } else {
+    //             throw new Error('Failed to save evaluation remarks');
+    //         }
+    //     })
+    //     .then(finalized => {
+    //         setLoadingState(saveBtn, false);
 
-            if (finalized) {
-                alert('Bridge Assessment completed successfully! Thank you!');
+    //         if (finalized) {
+    //             alert('Bridge Assessment completed successfully! Thank you!');
 
-                // Clear stored assessment ID
-                localStorage.removeItem('bridge_assessment_id');
-                currentAssessmentId = null;
+    //             // Clear stored assessment ID
+    //             localStorage.removeItem('bridge_assessment_id');
+    //             currentAssessmentId = null;
 
-                // Redirect to success page or reset
-                window.location.href = 'assessment-complete.html';
-            } else {
-                alert('Assessment saved but finalization failed');
-            }
-        })
-        .catch(error => {
-            setLoadingState(saveBtn, false);
-            console.error('Error in handleEvaluationRemarksSave:', error);
-            alert('Error completing assessment: ' + error.message);
-        });
+    //             // Redirect to success page or reset
+    //             window.location.href = 'assessment-complete.html';
+    //         } else {
+    //             alert('Assessment saved but finalization failed');
+    //         }
+    //     })
+    //     .catch(error => {
+    //         setLoadingState(saveBtn, false);
+    //         console.error('Error in handleEvaluationRemarksSave:', error);
+    //         alert('Error completing assessment: ' + error.message);
+    //     });
 }
 
 function getEvaluationRemarksData() {
