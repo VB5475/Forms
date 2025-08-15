@@ -254,7 +254,7 @@ async function submitFormData(formDataObject, formType, actionType) {
         console.log('Starting parallel submission to both APIs...');
 
         const [serverResult, gsheetsResult] = await Promise.allSettled([
-            sendToLocalServer(formDataObject, formType, actionType),
+            // sendToLocalServer(formDataObject, formType, actionType),
             sendToGoogleSheets(formDataObject, formType, actionType)
         ]);
 
@@ -1143,7 +1143,7 @@ window.BridgeFormDebug = {
     // Test individual API calls
     testServerOnly: function (testData = { test: 'server_only' }) {
         console.log('Testing server API only...');
-        return sendToLocalServer(testData, 'test', 'server_test');
+        // return sendToLocalServer(testData, 'test', 'server_test');
     },
 
     testGSheetsOnly: function (testData = { test: 'gsheets_only' }) {
